@@ -157,3 +157,32 @@ body {
   justify-content: center;
   align-items: center;
 }
+.hidden {
+  display: none;
+}
+.main-carousel {
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+}
+.main-carousel .main-carousel-img-1 {
+  height: 229px;
+  min-width: 1024px;
+  background-image: url('../img/home/home-the-blocks-img.png');
+  background-size: cover;
+  background-position: center;
+}
+.main-carousel .main-carousel-img-2 {
+  height: 229px;
+  min-width: 1024px;
+  background-image: url('../img/home/home-outskirts-img.png');
+  background-size: cover;
+  background-position: center;
+}
+.main-carousel .main-carousel-img-3 {
+  height: 224px;
+  min-width: 1024px;
+  background-image: url('../img/home/home-villas-img.png');
+  background-size: cover;
+  background-position: center;
+}
