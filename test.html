@@ -64,15 +64,33 @@
     document.querySelector('#btn').addEventListener('click',()=>{
         let div = document.querySelector('#div');
         let img = document.querySelector('#img');
-        div.classList.add('moveup');
-        img.classList.add('slide-image-right');
+        div.classList.add('slide-div-up');
+        img.classList.add('slide-image-left');
     })
     document.querySelector('#btn2').addEventListener('click',()=>{
         let div = document.querySelector('#div');
         let img = document.querySelector('#img');
-        div.classList.remove('moveup');
-        img.classList.remove('slide-image-right');
-    })    
+        div.classList.remove('slide-div-up');
+        img.classList.remove('slide-image-left');
+    })  
+    function slideRight(){
+        let div = document.querySelector('#div');
+        let img = document.querySelector('#img');
+        div.classList.add('slide-div-up');
+        img.classList.add('slide-image-left');
+
+        setTimeout(() => {
+          let div = document.querySelector('#div');
+          let img = document.querySelector('#img');
+          div.classList.remove('slide-div-up');
+          img.classList.remove('slide-image-left');
+        }, 1000);
+    }
+
+
+    setInterval(slideRight,5000)  
+    
+
   </script>
 
   <style>
@@ -105,14 +123,12 @@
     }
 
   .slide-image-right{
-      animation: animatedimg .5s 1;
-      -moz-animation: animatedimg .5s 1;
-      -webkit-animation: animatedimg .5s 1;
-      -o-animation: animatedimg .5s 1;
+      animation: animate-img .5s 1;
+      -moz-animation: animate-img .5s 1;
+      -webkit-animation: animate-img .5s 1;
+      -o-animation: animate-img .5s 1;
   }
-
-
- @keyframes animatedimg{
+ @keyframes animate-img{
     0% {
         transform:translateX(-75%) scale(0);  
     }
@@ -123,15 +139,32 @@
         transform:translateX(0%) scale(1);
     }
   }
-
-  .moveup{
-      animation: animatedMoveup .5s 1;
-      -moz-animation: animatedMoveup .5s 1;
-      -webkit-animation: animatedMoveup .5s 1;
-      -o-animation: animatedMoveup .5s 1;
+  .slide-image-left{
+      animation: animate-img .5s 1;
+      -moz-animation: animate-img .5s 1;
+      -webkit-animation: animate-img .5s 1;
+      -o-animation: animate-img .5s 1;
+  }
+ @keyframes animate-img{
+    0% {
+        transform:translateX(75%) scale(0);  
+    }
+    50% {
+        transform:translateX(-15%) scale(.5);  
+    }
+    100% {
+        transform:translateX(0%) scale(1);
+    }
   }
 
-  @keyframes animatedMoveup{
+
+  .slide-div-down{
+      animation: animate-div .5s 1;
+      -moz-animation: animate-div .5s 1;
+      -webkit-animation: animate-div .5s 1;
+      -o-animation: animate-div .5s 1;
+  }
+  @keyframes animate-div{
     0% {
         opacity: .5;
         transform:translateY(-50%);  
@@ -141,6 +174,23 @@
         transform:translateY(0%);
     }
   }
+  .slide-div-up{
+      animation: animate-div .5s 1;
+      -moz-animation: animate-div .5s 1;
+      -webkit-animation: animate-div .5s 1;
+      -o-animation: animate-div .5s 1;
+  }
+  @keyframes animate-div{
+    0% {
+        opacity: .5;
+        transform:translateY(50%);  
+    }
+    100% {
+        opacity: 1;
+        transform:translateY(0%);
+    }
+  }
+
 
 
 
