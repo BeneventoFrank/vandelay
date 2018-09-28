@@ -6,19 +6,14 @@
 </head>
 <body>
 
-  <div class="site-wrap">
 
-
-
-
-    <div id='div'>
-    <img id='img' src="http://unsplash.it/400/400" >
-    <button id='btn'> activate! </button>
-    <button id='btn2'> De-activate! </button>
-  </div>
-
-
-  </div>
+  <section class='center'>
+    <div class="site-wrap">
+      <div id='div'>
+        <img id='img'>
+      </div>
+    </div>
+</section>
 
   <script>
     // function debounce(func, wait = 20, immediate = true) {
@@ -61,35 +56,43 @@
 
     // window.addEventListener('scroll', debounce(checkSlide)); -->
 
-    document.querySelector('#btn').addEventListener('click',()=>{
-        let div = document.querySelector('#div');
-        let img = document.querySelector('#img');
+
+
+let sec = 0;
+let imgCounter = 1;
+let nextDir = 'left'
+
+let div = document.querySelector('#div');
+let img = document.querySelector('#img');
+div.classList.add('slide-div-up');
+img.classList.add(`main-carousel-img-${imgCounter}`);
+img.classList.add(`slide-image-${nextDir}`);
+
+setInterval(()=>{
+        for(let i = 0; i<=3;i++){
+            img.classList.remove(`main-carousel-img-${i}`);
+            img.classList.remove(`slide-image-left`);
+            img.classList.remove(`slide-image-right`);
+
+        }
         div.classList.add('slide-div-up');
-        img.classList.add('slide-image-left');
-    })
-    document.querySelector('#btn2').addEventListener('click',()=>{
-        let div = document.querySelector('#div');
-        let img = document.querySelector('#img');
-        div.classList.remove('slide-div-up');
-        img.classList.remove('slide-image-left');
-    })  
-    function slideRight(){
-        let div = document.querySelector('#div');
-        let img = document.querySelector('#img');
-        div.classList.add('slide-div-up');
-        img.classList.add('slide-image-left');
+        img.classList.add(`main-carousel-img-${imgCounter}`);
+        img.classList.add(`slide-image-${nextDir}`);
 
-        setTimeout(() => {
-          let div = document.querySelector('#div');
-          let img = document.querySelector('#img');
-          div.classList.remove('slide-div-up');
-          img.classList.remove('slide-image-left');
-        }, 1000);
-    }
+        sec = 0;
+        imgCounter = imgCounter +1;
+        if(nextDir==='left'){
+          nextDir = 'right'
+        } else {
+          nextDir = 'left'
+        }
+
+        if(imgCounter===4){
+           imgCounter = 1;
+        }
+},4000)
 
 
-    setInterval(slideRight,5000)  
-    
 
   </script>
 
@@ -106,29 +109,58 @@
       margin: 0;
     }
     
-    *, *:before, *:after {
-      box-sizing: inherit;
+    *{
+      box-sizing: border-box;
     }
 
-    h1 {
-      margin-top: 0;
+    .main-carousel-img-1{
+        height: 220px;
+        min-width: 1024px;
+        background-image: url('./home-the-blocks-img.png');
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat
+    }
+    .main-carousel-img-2{
+        height: 220px;
+        min-width: 1024px;
+        background-image: url('./home-outskirts-img.png');    
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat
+    }
+
+    .main-carousel-img-3{
+        height: 220px;
+        min-width: 1024px;
+        background-image: url('./home-villas-img.png');    
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat
     }
 
     .site-wrap {
-      max-width: 700px;
-      margin: 100px auto;
+      min-width: 1024px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-top:30px;
+      margin-bottom:30px;
+    }
+    .center{
       background: white;
-      padding: 40px;
-      text-align: justify;
+      display:flex;
+      justify-content: center;
+      align-items: center;
     }
 
   .slide-image-right{
-      animation: animate-img .5s 1;
-      -moz-animation: animate-img .5s 1;
-      -webkit-animation: animate-img .5s 1;
-      -o-animation: animate-img .5s 1;
+      animation: animate-img-right .5s 1 !important;
+      -moz-animation: animate-img-right .5s 1 !important;
+      -webkit-animation: animate-img-right .5s 1 !important;
+      -o-animation: animate-img-right .5s 1 !important;
   }
- @keyframes animate-img{
+ @keyframes animate-img-right{
     0% {
         transform:translateX(-75%) scale(0);  
     }
@@ -140,12 +172,12 @@
     }
   }
   .slide-image-left{
-      animation: animate-img .5s 1;
-      -moz-animation: animate-img .5s 1;
-      -webkit-animation: animate-img .5s 1;
-      -o-animation: animate-img .5s 1;
+      animation: animate-img-left .5s 1 !important;
+      -moz-animation: animate-img-left .5s 1 !important;
+      -webkit-animation: animate-img-left .5s 1 !important;
+      -o-animation: animate-img-left .5s 1 !important;
   }
- @keyframes animate-img{
+ @keyframes animate-img-left{
     0% {
         transform:translateX(75%) scale(0);  
     }
