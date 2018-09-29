@@ -9,94 +9,118 @@
 
   <section class='center'>
     <div class="site-wrap">
-      <div id='div'>
-        <img id='img'>
+      <div id='div' class='slide-div-up'>
+        <img class='carousel hidden' data-direction='right' data-order='0' src="./home-the-blocks-img.png" alt="blocks">
+        <img class='carousel hidden' data-direction='left' data-order='1' src="./home-outskirts-img.png" alt="outskirts">
+        <img class='carousel hidden' data-direction='right' data-order='2' src="./home-villas-img.png" alt="villas">
       </div>
+      <img src="./home-villas-img.png" class="slide-in" alt="">      
     </div>
+    <button id='btn'> stop it </button>
+
+    
+
 </section>
 
   <script>
-    // function debounce(func, wait = 20, immediate = true) {
-    //   var timeout;
-    //   return function() {
-    //     var context = this, args = arguments;
-    //     var later = function() {
-    //       timeout = null;
-    //       if (!immediate) func.apply(context, args);
-    //     };
-    //     var callNow = immediate && !timeout;
-    //     clearTimeout(timeout);
-    //     timeout = setTimeout(later, wait);
-    //     if (callNow) func.apply(context, args);
-    //   };
-    // };
+    function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
 
-    // const sliderImages = document.querySelectorAll('.slide-in');
+    const sliderImages = document.querySelectorAll('.slide-in');
 
-    // function checkSlide() {
-    //   sliderImages.forEach(sliderImage => {
-    //     // half way through the image
-    //     console.log(`weve got ${window.scrollY} and ${window.innerHeight} and ${sliderImage.height}`)
-    //     const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
-    //     console.log('sliding in at ', slideInAt)
-    //     // bottom of the image
-    //     const imageBottom = sliderImage.offsetTop + sliderImage.height;
-    //     const isHalfShown = slideInAt > sliderImage.offsetTop;
-    //     if(isHalfShown){
-    //       console.log('half is shown')
-    //     } 
-    //     const isNotScrolledPast = window.scrollY < imageBottom;
-    //     if (isHalfShown && isNotScrolledPast) {
-    //       sliderImage.classList.add('active');
-    //     } else {
-    //       sliderImage.classList.remove('active');
-    //     }
-    //   });
-    // }
+    function checkSlide() {
+      sliderImages.forEach(sliderImage => {
+        // half way through the image
 
-    // window.addEventListener('scroll', debounce(checkSlide)); -->
+        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
 
-
-
-let sec = 0;
-let imgCounter = 1;
-let nextDir = 'left'
-
-let div = document.querySelector('#div');
-let img = document.querySelector('#img');
-div.classList.add('slide-div-up');
-img.classList.add(`main-carousel-img-${imgCounter}`);
-img.classList.add(`slide-image-${nextDir}`);
-
-setInterval(()=>{
-        for(let i = 0; i<=3;i++){
-            img.classList.remove(`main-carousel-img-${i}`);
-            img.classList.remove(`slide-image-left`);
-            img.classList.remove(`slide-image-right`);
-
-        }
-        div.classList.add('slide-div-up');
-        img.classList.add(`main-carousel-img-${imgCounter}`);
-        img.classList.add(`slide-image-${nextDir}`);
-
-        sec = 0;
-        imgCounter = imgCounter +1;
-        if(nextDir==='left'){
-          nextDir = 'right'
+        // bottom of the image
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+        const isHalfShown = slideInAt > sliderImage.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        if (isHalfShown && isNotScrolledPast) {
+          sliderImage.classList.add('slide-image-right');
         } else {
-          nextDir = 'left'
+          sliderImage.classList.remove('slide-image-right');
         }
+      });
+    }
 
-        if(imgCounter===4){
-           imgCounter = 1;
-        }
-},4000)
-
+    window.addEventListener('scroll', debounce(checkSlide)); 
 
 
+  let div = document.querySelector('#div');
+  let images = document.querySelectorAll('.carousel');
+
+  let image = images[0];
+  let nextDir = images[0].dataset.direction;
+  let imgCounter = images[0].dataset.order;
+  let nextCounter = 0;
+  imgCounter = Number(imgCounter);
+  image.classList.remove('hidden')
+  image.classList.add(`slide-image-${nextDir}`);
+  runAnimation = true;
+
+
+  setInterval(()=>{
+          if(runAnimation){
+            images[imgCounter].classList.add('hidden');
+            images[imgCounter].classList.remove('slide-image-left');
+            images[imgCounter].classList.remove('slide-image-right');
+            
+            if(nextCounter >= images.length-1){
+              nextCounter = 0;
+            } else 
+            {
+              nextCounter = imgCounter+1;
+            }
+            images[nextCounter].classList.remove('hidden');
+            nextDir = images[nextCounter].dataset.direction;
+            image = images[nextCounter];
+            image.classList.add(`slide-image-${nextDir}`);
+            imgCounter = nextCounter;
+          }
+  },4000)
+
+
+  let btn = document.querySelector('#btn');
+  btn.addEventListener('click',() => {
+    runAnimation = false; 
+  })
   </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <style>
+    .slide-in{
+      margin-top:500px;
+    }
     html {
       box-sizing: border-box;
       background: #ffc600;
@@ -113,31 +137,6 @@ setInterval(()=>{
       box-sizing: border-box;
     }
 
-    .main-carousel-img-1{
-        height: 220px;
-        min-width: 1024px;
-        background-image: url('./home-the-blocks-img.png');
-        background-size:cover;
-        background-position: center;
-        background-repeat: no-repeat
-    }
-    .main-carousel-img-2{
-        height: 220px;
-        min-width: 1024px;
-        background-image: url('./home-outskirts-img.png');    
-        background-size:cover;
-        background-position: center;
-        background-repeat: no-repeat
-    }
-
-    .main-carousel-img-3{
-        height: 220px;
-        min-width: 1024px;
-        background-image: url('./home-villas-img.png');    
-        background-size:cover;
-        background-position: center;
-        background-repeat: no-repeat
-    }
 
     .site-wrap {
       min-width: 1024px;
@@ -146,6 +145,8 @@ setInterval(()=>{
       align-items: center;
       margin-top:30px;
       margin-bottom:30px;
+      flex-direction: column;
+
     }
     .center{
       background: white;
@@ -155,10 +156,10 @@ setInterval(()=>{
     }
 
   .slide-image-right{
-      animation: animate-img-right .5s 1 !important;
-      -moz-animation: animate-img-right .5s 1 !important;
-      -webkit-animation: animate-img-right .5s 1 !important;
-      -o-animation: animate-img-right .5s 1 !important;
+      animation: animate-img-right .5s 1;
+      -moz-animation: animate-img-right .5s 1;
+      -webkit-animation: animate-img-right .5s 1;
+      -o-animation: animate-img-right .5s 1;
   }
  @keyframes animate-img-right{
     0% {
@@ -172,10 +173,10 @@ setInterval(()=>{
     }
   }
   .slide-image-left{
-      animation: animate-img-left .5s 1 !important;
-      -moz-animation: animate-img-left .5s 1 !important;
-      -webkit-animation: animate-img-left .5s 1 !important;
-      -o-animation: animate-img-left .5s 1 !important;
+      animation: animate-img-left .5s 1;
+      -moz-animation: animate-img-left .5s 1;
+      -webkit-animation: animate-img-left .5s;
+      -o-animation: animate-img-left .5s 1;
   }
  @keyframes animate-img-left{
     0% {
@@ -224,7 +225,9 @@ setInterval(()=>{
   }
 
 
-
+  .hidden{
+    display:none;
+  }
 
 
 
