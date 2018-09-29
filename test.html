@@ -14,8 +14,11 @@
         <img class='carousel hidden' data-direction='left' data-order='1' src="./home-outskirts-img.png" alt="outskirts">
         <img class='carousel hidden' data-direction='right' data-order='2' src="./home-villas-img.png" alt="villas">
       </div>
-      <img src="./home-villas-img.png" class="slide-in" alt="">      
+      <img src="./home-villas-img.png" class="slide-in" data-direction='right' alt="">      
     </div>
+    <div class='testDiv'>
+      &nbsp; where am i
+    </div> 
     <button id='btn'> stop it </button>
 
     
@@ -43,17 +46,16 @@
     function checkSlide() {
       sliderImages.forEach(sliderImage => {
         // half way through the image
-
         const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
-
         // bottom of the image
         const imageBottom = sliderImage.offsetTop + sliderImage.height;
         const isHalfShown = slideInAt > sliderImage.offsetTop;
         const isNotScrolledPast = window.scrollY < imageBottom;
+        let direction = sliderImage.dataset.direction;
         if (isHalfShown && isNotScrolledPast) {
-          sliderImage.classList.add('slide-image-right');
+          sliderImage.classList.add(`slide-image-${direction}`);
         } else {
-          sliderImage.classList.remove('slide-image-right');
+          sliderImage.classList.remove(`slide-image-${direction}`);
         }
       });
     }
@@ -118,6 +120,29 @@
 
 
   <style>
+
+    .testDiv{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+      animation-name: example;
+      animation-duration: 4s;
+    }
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example {
+        from {background-color: red;}
+        to {background-color: yellow;}
+    }
+
+    /* Standard syntax */
+    @keyframes example {
+        from {background-color: red;}
+        to {background-color: yellow;}
+    }    
+
+
     .slide-in{
       margin-top:500px;
       margin-bottom:1500px;
