@@ -73,6 +73,7 @@
   imgCounter = Number(imgCounter);
   image.classList.remove('hidden')
   image.classList.add(`slide-image-${nextDir}`);
+  image.className = `slide-image-${nextDir}`;
   runAnimation = true;
 
 
@@ -92,6 +93,8 @@
             nextDir = images[nextCounter].dataset.direction;
             image = images[nextCounter];
             image.classList.add(`slide-image-${nextDir}`);
+            image.className = `slide-image-${nextDir}`;
+
             imgCounter = nextCounter;
           }
   },2000)
