@@ -65,12 +65,13 @@
 
   let div = document.querySelector('#div');
   let images = document.querySelectorAll('.carousel');
-
+    alert('can you see me? ', images)
   let image = images[0];
   let nextDir = images[0].dataset.direction;
   let imgCounter = images[0].dataset.order;
   let nextCounter = 0;
   imgCounter = Number(imgCounter);
+  image.className = '';
   image.classList.remove('hidden')
   image.classList.add(`slide-image-${nextDir}`);
   image.className = `slide-image-${nextDir}`;
@@ -200,11 +201,6 @@
       -moz-animation: animate-img-right .5s 1;
       -webkit-animation: animate-img-right .5s 1;
       -o-animation: animate-img-right .5s 1;
-      -webkit-animation-name: animate-img-right;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-      -webkit-animation-direction: alternate;
-      
   }
  @keyframes animate-img-right{
     0% {
@@ -222,10 +218,6 @@
       -moz-animation: animate-img-left .5s 1;
       -webkit-animation: animate-img-left .5s;
       -o-animation: animate-img-left .5s 1;
-      -webkit-animation-name:animate-img-left;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-      -webkit-animation-direction: alternate;      
   }
  @keyframes animate-img-left{
     0% {
@@ -245,10 +237,6 @@
       -moz-animation: animate-div .5s 1;
       -webkit-animation: animate-div .5s 1;
       -o-animation: animate-div .5s 1;
-      -webkit-animation-name:animate-div;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-      -webkit-animation-direction: alternate;      
   }
   @keyframes animate-div{
     0% {
@@ -265,10 +253,6 @@
       -moz-animation: animate-div .5s 1;
       -webkit-animation: animate-div .5s 1;
       -o-animation: animate-div .5s 1;
-      -webkit-animation-name: animate-div;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-      -webkit-animation-direction: alternate;      
   }
   @keyframes animate-div{
     0% {
