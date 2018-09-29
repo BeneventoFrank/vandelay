@@ -73,7 +73,7 @@
   imgCounter = Number(imgCounter);
   image.classList.remove('hidden')
   image.classList.add(`slide-image-${nextDir}`);
-  image.className = `slide-image-${nextDir}`;
+  image.className = `slide-image-${nextDir};`;
   runAnimation = true;
 
 
@@ -93,11 +93,14 @@
             nextDir = images[nextCounter].dataset.direction;
             image = images[nextCounter];
             image.classList.add(`slide-image-${nextDir}`);
-            image.className = `slide-image-${nextDir}`;
-
+            image.className = `slide-image-${nextDir};`;
+            console.log(image);
             imgCounter = nextCounter;
           }
-  },2000)
+  },10000)
+
+
+
 
 
   let btn = document.querySelector('#btn');
