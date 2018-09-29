@@ -65,7 +65,7 @@
 
   var div = document.querySelector('#div');
   var images = document.querySelectorAll('.carousel');
-    alert('can you see me? ', images)
+
   var image = images[0];
   var nextDir = images[0].dataset.direction;
   var imgCounter = images[0].dataset.order;
@@ -81,7 +81,7 @@
   setInterval(runAnimations,2000);
 
 function runAnimations() {
-          alert('do you ever see me?')
+
           if(runAnimation){
             images[imgCounter].classList.add('hidden');
             images[imgCounter].classList.remove('slide-image-left');
