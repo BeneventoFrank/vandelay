@@ -73,7 +73,7 @@
   imgCounter = Number(imgCounter);
   image.classList.remove('hidden')
   image.classList.add(`slide-image-${nextDir}`);
-  image.className = `slide-image-${nextDir};`;
+  image.className = `slide-image-${nextDir}`;
   runAnimation = true;
 
 
@@ -93,7 +93,7 @@
             nextDir = images[nextCounter].dataset.direction;
             image = images[nextCounter];
             image.classList.add(`slide-image-${nextDir}`);
-            image.className = `slide-image-${nextDir};`;
+            image.className = `slide-image-${nextDir}`;
             console.log(image);
             imgCounter = nextCounter;
           }
@@ -201,6 +201,10 @@
       -webkit-animation: animate-img-right .5s 1;
       -o-animation: animate-img-right .5s 1;
       -webkit-animation-name: animate-img-right;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      
   }
  @keyframes animate-img-right{
     0% {
@@ -219,6 +223,9 @@
       -webkit-animation: animate-img-left .5s;
       -o-animation: animate-img-left .5s 1;
       -webkit-animation-name:animate-img-left;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;      
   }
  @keyframes animate-img-left{
     0% {
@@ -239,6 +246,9 @@
       -webkit-animation: animate-div .5s 1;
       -o-animation: animate-div .5s 1;
       -webkit-animation-name:animate-div;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;      
   }
   @keyframes animate-div{
     0% {
@@ -256,6 +266,9 @@
       -webkit-animation: animate-div .5s 1;
       -o-animation: animate-div .5s 1;
       -webkit-animation-name: animate-div;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;      
   }
   @keyframes animate-div{
     0% {
