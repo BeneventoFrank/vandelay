@@ -1,0 +1,64 @@
+
+body{
+    background-color: black;
+    color:white;
+    display:flex;
+    flex-direction: column;
+}
+
+.img1{
+
+    /* The image used */
+    background-image: url('./img/home/home-jumbotron.png');
+
+    /* Set a specific height */
+    height: 100vh; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.div{
+
+    background-color:white;
+    color:black;
+    height:1000px;
+}
+.img2{
+    /* The image used */
+    background-image: url('./img/arc2.jpg');
+
+    /* Set a specific height */
+    height: 100vh; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.div2{
+
+    background-color:white;
+    color:black;
+    height:1000px;
+}
+.img3{
+    /* The image used */
+    background-image: url('./img/arc3.jpeg');
+
+    /* Set a specific height */
+    height: 100vh; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.div3{
+
+    background-color:white;
+    color:black;
+    height:200px;
+}
