@@ -67,9 +67,9 @@
   var images = document.querySelectorAll('.carousel');
     alert('can you see me? ', images)
   var image = images[0];
-  let nextDir = images[0].dataset.direction;
-  let imgCounter = images[0].dataset.order;
-  let nextCounter = 0;
+  var nextDir = images[0].dataset.direction;
+  var imgCounter = images[0].dataset.order;
+  var nextCounter = 0;
   imgCounter = Number(imgCounter);
   image.className = '';
   image.classList.remove('hidden')
@@ -78,7 +78,10 @@
   runAnimation = true;
 
 
-  setInterval(()=>{
+  setInterval(runAnimation,10000)
+
+function runAnimation() {
+    
           if(runAnimation){
             images[imgCounter].classList.add('hidden');
             images[imgCounter].classList.remove('slide-image-left');
@@ -98,8 +101,8 @@
             console.log(image);
             imgCounter = nextCounter;
           }
-  },10000)
 
+}
 
 
 
