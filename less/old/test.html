@@ -130,35 +130,6 @@ function runAnimations() {
 
   <style>
 
-    .testDiv{
-      width: 100px;
-      height: 100px;
-      background-color: red;
-      -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-      animation-name: example;
-      animation-duration: 4s;
-    }
-    /* Safari 4.0 - 8.0 */
-    @-webkit-keyframes example {
-        0% {
-            background-color: red;
-        }
-        100% {
-            background-color: yellow;
-        }
-    }
-
-    /* Standard syntax */
-    @keyframes example {
-        0% {
-            background-color: red;
-        }
-        100% {
-            background-color: yellow;
-        }
-    }    
-
 
     .slide-in{
       margin-top:500px;
@@ -197,75 +168,6 @@ function runAnimations() {
       justify-content: center;
       align-items: center;
     }
-
-  .slide-image-right{
-      animation: animate-img-right .5s 1;
-      -moz-animation: animate-img-right .5s 1;
-      -webkit-animation: animate-img-right .5s 1;
-      -o-animation: animate-img-right .5s 1;
-  }
- @keyframes animate-img-right{
-    0% {
-        transform:translateX(-75%) scale(0);  
-    }
-    50% {
-        transform:translateX(15%) scale(.5);  
-    }
-    100% {
-        transform:translateX(0%) scale(1);
-    }
-  }
-  .slide-image-left{
-      animation: animate-img-left .5s 1;
-      -moz-animation: animate-img-left .5s 1;
-      -webkit-animation: animate-img-left .5s;
-      -o-animation: animate-img-left .5s 1;
-  }
- @keyframes animate-img-left{
-    0% {
-        transform:translateX(75%) scale(0);  
-    }
-    50% {
-        transform:translateX(-15%) scale(.5);  
-    }
-    100% {
-        transform:translateX(0%) scale(1);
-    }
-  }
-
-
-  .slide-div-down{
-      animation: animate-div .5s 1;
-      -moz-animation: animate-div .5s 1;
-      -webkit-animation: animate-div .5s 1;
-      -o-animation: animate-div .5s 1;
-  }
-  @keyframes animate-div{
-    0% {
-        opacity: .5;
-        transform:translateY(-50%);  
-    }
-    100% {
-        opacity: 1;
-        transform:translateY(0%);
-    }
-  }
-  .slide-div-up{
-      animation: animate-div .5s 1;
-      -moz-animation: animate-div .5s 1;
-      -webkit-animation: animate-div .5s 1;
-      -o-animation: animate-div .5s 1;
-  }
-  @keyframes animate-div{
-    0% {
-        opacity: .5;
-        transform:translateY(50%);  
-    }
-    100% {
-        opacity: 1;
-        transform:translateY(0%);
-    }
-  }
 
 
   .hidden{
