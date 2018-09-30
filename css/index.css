@@ -143,46 +143,55 @@ body {
   background-color: #ffffff;
   font-family: Roboto, Arial, sans-serif;
   overflow-x: hidden;
-}
-.main-container {
-  background-image: url('../img/home/home-jumbotron.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
-  width: 100vw;
-  opacity: 0.8;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hidden {
-  display: none;
-}
-.main-carousel {
   display: flex;
   flex-direction: column;
-  max-width: 1024px;
+  margin: 0 auto;
 }
-.main-carousel .main-carousel-img-1 {
-  height: 229px;
-  min-width: 1024px;
-  background-image: url('../img/home/home-the-blocks-img.png');
-  background-size: cover;
+.img1 {
+  /* The image used */
+  background-image: url('../img/home/home-jumbotron.png');
+  /* Set a specific height */
+  height: 780px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.main-carousel .main-carousel-img-2 {
-  height: 229px;
-  min-width: 1024px;
-  background-image: url('../img/home/home-outskirts-img.png');
-  background-size: cover;
-  background-position: center;
+.div {
+  background-color: white;
+  color: black;
+  height: 800px;
 }
-.main-carousel .main-carousel-img-3 {
-  height: 224px;
-  min-width: 1024px;
-  background-image: url('../img/home/home-villas-img.png');
-  background-size: cover;
+.img2 {
+  /* The image used */
+  background-image: url('../img/arc2.jpg');
+  /* Set a specific height */
+  height: 650px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.div2 {
+  background-color: white;
+  color: black;
+  height: 1000px;
+}
+.img3 {
+  /* The image used */
+  background-image: url('../img/arc3.jpg');
+  /* Set a specific height */
+  height: 860px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.div3 {
+  background-color: white;
+  color: black;
+  height: 200px;
 }
