@@ -13,7 +13,7 @@ body{
     background-image: url('./img/home/home-jumbotron.png');
 
     /* Set a specific height */
-    height: 750px; 
+    height: 780px; 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -25,14 +25,14 @@ body{
 
     background-color:white;
     color:black;
-    height:500px;
+    height:800px;
 }
 .img2{
     /* The image used */
     background-image: url('./img/arc2.jpg');
 
     /* Set a specific height */
-    height: 350px; 
+    height: 650px; 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
