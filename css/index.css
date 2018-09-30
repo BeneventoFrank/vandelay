@@ -258,13 +258,14 @@ body {
   /* The image used */
   background-image: url('../img/home/home-jumbotron.png');
   /* Set a specific height */
-  height: 780px;
+  min-height: 780px;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-background-size: 1200px 1900px;
+  max-width: 100%;
+  height: auto;
 }
 .div {
   background-color: white;
@@ -281,7 +282,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-background-size: 1200px 1900px;
 }
 .div2 {
   background-color: white;
@@ -298,7 +298,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-background-size: 1200px 1900px;
 }
 .div3 {
   background-color: white;
