@@ -21,18 +21,18 @@
   
       const sliderImages = document.querySelectorAll('.slide-in');
   
-      let x = function(sliderImage){
-        var slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
-        var imageBottom = sliderImage.offsetTop + sliderImage.height;
-        var isHalfShown = slideInAt > sliderImage.offsetTop;
-        var isNotScrolledPast = window.scrollY < imageBottom;
-        var direction = sliderImage.dataset.direction;
+        var x = function(sliderImage){
+          var slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+          var imageBottom = sliderImage.offsetTop + sliderImage.height;
+          var isHalfShown = slideInAt > sliderImage.offsetTop;
+          var isNotScrolledPast = window.scrollY < imageBottom;
+          var direction = sliderImage.dataset.direction;
 
-        if (isHalfShown && isNotScrolledPast) {
-          sliderImage.classList.add(`slide-image-${direction}`);
-        } else {
-          sliderImage.classList.remove(`slide-image-${direction}`);
-        }
+          if (isHalfShown && isNotScrolledPast) {
+            sliderImage.classList.add(`slide-image-${direction}`);
+          } else {
+            sliderImage.classList.remove(`slide-image-${direction}`);
+          }
       }
 
       function checkSlide() {
