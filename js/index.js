@@ -3,25 +3,12 @@
 
     if(!navigator.userAgent.toLowerCase().includes('ipad')){
 
+      var img = document.getElementById('img1');
+      img.classList.add('bgImage');
       
-      // function debounce(func, wait = 20, immediate = true) {
-      //   var timeout;
-      //   return function() {
-      //     var context = this, args = arguments;
-      //     var later = function() {
-      //       timeout = null;
-      //       if (!immediate) func.apply(context, args);
-      //     };
-      //     var callNow = immediate && !timeout;
-      //     clearTimeout(timeout);
-      //     timeout = setTimeout(later, wait);
-      //     if (callNow) func.apply(context, args);
-      //   };
-      // };
-  
       const sliderImages = document.querySelectorAll('.slide-in');
   
-        var x = function(sliderImage){
+      var x = function(sliderImage){
           var slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
           var imageBottom = sliderImage.offsetTop + sliderImage.height;
           var isHalfShown = slideInAt > sliderImage.offsetTop;
