@@ -38,9 +38,11 @@
     //     }
     //   });
     // }
-
+    console.log(navigator.userAgent.toLowerCase())
     // window.addEventListener('scroll', checkSlide); 
-
+    if(navigator.userAgent.toLowerCase().includes('ipad')){
+      
+    }
     console.log('-----------------')
-    console.log(navigator.userAgent)
+    console.log()
     console.log('-----------------')    
