@@ -264,11 +264,17 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
+  height: auto;
   /* Set a specific height */
   min-height: 780px;
   /* Create the parallax scrolling effect */
   max-width: 100%;
-  height: auto;
+}
+@media (max-width:800px) {
+  .img1 {
+    background-image: url('../img/home/home-mobile-jumbotron.png');
+  }
 }
 .bgImage {
   background-attachment: fixed;
@@ -320,8 +326,18 @@ body {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width:800px) {
+  .marketing-container {
+    flex-direction: column;
+  }
+}
 .marketing-container .arch-left-side {
   width: 45%;
+}
+@media (max-width:800px) {
+  .marketing-container .arch-left-side {
+    width: 100%;
+  }
 }
 .marketing-container .arch-left-side .archText-img {
   width: 100%;
@@ -333,6 +349,11 @@ body {
 }
 .marketing-container .arch-right-side {
   width: 45%;
+}
+@media (max-width:800px) {
+  .marketing-container .arch-right-side {
+    width: 100%;
+  }
 }
 .marketing-container .arch-right-side .futureDesign-img {
   width: 100%;
@@ -378,12 +399,7 @@ body {
 }
 .proj-container .proj-image .proj-blocks-box p {
   font-size: 2.4rem;
-  letter-spacing: 5px;
-}
-@media (min-width:800px) {
-  .proj-container .proj-image .proj-blocks-box p {
-    letter-spacing: 8px;
-  }
+  letter-spacing: 8px;
 }
 .proj-container .proj-image .proj-outskirts-box {
   background-color: #D8D8D8;
@@ -398,12 +414,7 @@ body {
 }
 .proj-container .proj-image .proj-outskirts-box p {
   font-size: 2.4rem;
-  letter-spacing: 5px;
-}
-@media (min-width:800px) {
-  .proj-container .proj-image .proj-outskirts-box p {
-    letter-spacing: 8px;
-  }
+  letter-spacing: 8px;
 }
 .proj-container .proj-image .proj-villa-box {
   background-color: #D8D8D8;
@@ -418,12 +429,7 @@ body {
 }
 .proj-container .proj-image .proj-villa-box p {
   font-size: 2.4rem;
-  letter-spacing: 5px;
-}
-@media (min-width:800px) {
-  .proj-container .proj-image .proj-villa-box p {
-    letter-spacing: 8px;
-  }
+  letter-spacing: 8px;
 }
 .proj-container .proj-text {
   width: 50%;
@@ -454,13 +460,8 @@ body {
   margin-bottom: 15px;
   border-radius: 4px;
   height: 4rem;
-  width: 101%;
   max-width: 300px;
-}
-@media (min-width:800px) {
-  .footer .footer-container .footer-letstalk .lets-talk-input {
-    width: 95%;
-  }
+  width: 95%;
 }
 .footer .footer-container .footer-letstalk .subtext {
   font-size: 1.2rem;
@@ -470,11 +471,7 @@ body {
   margin-bottom: 20px;
   margin-right: 50px;
   padding-top: 12px;
-}
-@media (min-width:800px) {
-  .footer .footer-container .footer-address {
-    margin-top: 20px;
-  }
+  margin-top: 20px;
 }
 .footer .footer-container .footer-address p {
   line-height: 3rem;

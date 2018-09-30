@@ -4,9 +4,16 @@
     display:flex;
     justify-content: space-between;
 
+    @media @mobile{
+        flex-direction: column;
+    }
+
     .arch-left-side{
         width: 45%;
-
+        @media @mobile{
+            width: 100%;
+        }
+    
         .archText-img{
             width: 100%;
             height: auto;
@@ -20,6 +27,10 @@
     }
     .arch-right-side{
         width: 45%;
+        @media @mobile{
+            width: 100%;
+        }
+
 
         .futureDesign-img{
             width: 100%;
