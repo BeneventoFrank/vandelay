@@ -157,8 +157,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-top: 10px solid #99A4AF;
-  border-bottom: 10px solid #99A4AF;
+  border-top: 10px solid #52658F;
+  border-bottom: 10px solid #52658F;
 }
 .sectionHeading {
   font-size: 2.3rem;
@@ -187,6 +187,10 @@ body {
   font-size: 1.6rem;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+.img {
+  width: 100%;
+  height: auto;
 }
 .slide-image-right {
   animation: animate-img-right 0.5s 1;
@@ -270,13 +274,14 @@ body {
   background-attachment: fixed;
 }
 .div {
-  background-color: white;
+  background-color: #E8E8E8;
   color: black;
   height: 800px;
 }
 .img2 {
   /* The image used */
   background-image: url('../img/arc2.jpg');
+  opacity: 0.5;
   /* Set a specific height */
   height: 650px;
   /* Create the parallax scrolling effect */
@@ -285,13 +290,19 @@ body {
   background-size: cover;
 }
 .div2 {
-  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E8E8E8;
   color: black;
-  height: 1000px;
+  min-height: 1000px;
+  border-top: 10px solid #52658F;
+  border-bottom: 10px solid #52658F;
 }
 .img3 {
   /* The image used */
   background-image: url('../img/arc3.jpg');
+  opacity: 0.5;
   /* Set a specific height */
   height: 860px;
   /* Create the parallax scrolling effect */
@@ -300,7 +311,6 @@ body {
   background-size: cover;
 }
 .div3 {
-  background-color: white;
   color: black;
   height: 200px;
 }

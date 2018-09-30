@@ -23,9 +23,9 @@
           var direction = sliderImage.dataset.direction;
 
           if (isHalfShown && isNotScrolledPast) {
-            sliderImage.classList.add(`slide-image-${direction}`);
+            //sliderImage.classList.add(`slide-image-${direction}`);
           } else {
-            sliderImage.classList.remove(`slide-image-${direction}`);
+            //sliderImage.classList.remove(`slide-image-${direction}`);
           }
       }
 
