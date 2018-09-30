@@ -22,6 +22,7 @@
       sliderImages.forEach(sliderImage => {
         // half way through the image
         console.log('-----------------')
+        alert(navigator.userAgent)
         console.log(window.scrollY)
         console.log(window.innerHeight)
         console.log(sliderImage.height)
