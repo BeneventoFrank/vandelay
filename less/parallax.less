@@ -12,9 +12,6 @@
     /* Create the parallax scrolling effect */
     max-width: 100%;
 
-    @media @mobile{
-        background-image: url('../img/home/home-mobile-jumbotron.png');    
-    }
 }
 .bgImage{
     background-attachment: fixed;    
@@ -48,6 +45,11 @@
     border-bottom:10px solid @borderColor;
     padding-top:150px;
     padding-bottom:150px;
+
+    @media @mobile{
+        padding-top:50px;
+        padding-bottom:50px;
+    }    
 }
 .img3{
     /* The image used */

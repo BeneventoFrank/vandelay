@@ -6,10 +6,15 @@
     justify-content: center;
     align-items: center;
 
+
     .proj-image{
         width: 100%;
         height: auto;
 
+        @media @mobile{
+            margin-bottom:50px;
+        }
+    
         .proj-image-container{
             position:relative;
         }
@@ -24,10 +29,22 @@
             width: 31%;
             bottom:0px;
             right:0px;
+
+            @media @mobile{
+                height:71px;
+                bottom:-55px;
+                width: 70%;
+            }
         
             p{
                 font-size: 2.4rem;
                 letter-spacing: 8px;    
+                
+                @media @mobile{
+                    font-size: 2rem;
+                    letter-spacing: 6px;    
+                }                
+
             }
         }
         
@@ -41,10 +58,22 @@
             width: 31%;
             bottom:0px;
             left:0px;
+            
+            @media @mobile{
+                height:71px;
+                bottom:-55px;
+                width: 70%;
+            }
         
             p{
                 font-size: 2.4rem;
                 letter-spacing: 8px;    
+
+                @media @mobile{
+                    font-size: 2rem;
+                    letter-spacing: 6px;    
+                }                
+
             }
         }
 
@@ -79,5 +108,9 @@
         width: 50%;
         margin-top:30px;
         margin-bottom:50px;
+
+        @media @mobile{
+            width: 90%;
+        }
     }
 }

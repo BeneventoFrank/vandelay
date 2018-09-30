@@ -14,5 +14,3 @@
       img3.classList.add('bgImage');
     }
 
-    
-

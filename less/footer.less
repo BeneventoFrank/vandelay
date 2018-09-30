@@ -8,14 +8,19 @@
     flex-direction: column;
     padding-left:15px;
     padding-right:15px;
-    padding-left:0px;
-    padding-right:0px;
     
+    .footerHeading{
+        font-size:2.1rem;
+    }
 
     .footer-container{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+
+        @media @mobile {
+            flex-direction: column;
+        }
 
         .footer-letstalk{
             margin-top:25px;
@@ -34,23 +39,44 @@
                 font-size: 1.2rem;
             }
         }
-        .footer-address{
-            margin-top:-12px;
-            margin-bottom:20px;
-            margin-right:50px;
-            padding-top:12px;
-            margin-top:20px;
-            p{
-                line-height: 3rem;
+        .footer-addresses{
+
+            display:flex;
+            
+            @media @mobile{
+                justify-content: space-around
             }
-            .footer-addr-text{
-                font-size:1.3rem;
-            }
-            .footerAddress{
-                font-size:1.5rem;
-                line-height: 2.5rem;
+
+            .footer-address{
+                margin-top:-12px;
+                margin-bottom:20px;
+                margin-right:50px;
+                padding-top:12px;
+                margin-top:20px;
+    
+                @media @mobile{
+                    margin-right:0px;
+                    width: 135px;
+                    padding-left:10px;
+                    padding-right:10px;
+                }
+                p{
+                    line-height: 3rem;
+                }
+                .footer-addr-text{
+                    font-size:1.3rem;
+                }
+                .footerAddress{
+                    font-size:1.5rem;
+                    line-height: 2.5rem;
+
+                    @media @mobile{
+                        font-size:1.2rem;
+                    }
+                }
             }
         }
+
     }
     .copyright{
         font-size:1.3rem;
