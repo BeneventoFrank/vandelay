@@ -43,7 +43,4 @@
 
     console.log('-----------------')
     console.log(navigator.userAgent)
-    console.log(window.scrollY)
-    console.log(window.innerHeight)
-    console.log(sliderImage.height)
     console.log('-----------------')    
