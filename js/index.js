@@ -1,32 +1,47 @@
 
 
 
-// let imgDiv = document.querySelector('#main-carousel-img');
-// imgDiv.classList.add(`main-carousel-img-1`);
-// let sec = 0;
-// let imgCounter = 2;
+    function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
 
-// setInterval(()=>{
-//     if(sec === 4){
-//         for(let i = 0; i<=3;i++){
-//             imgDiv.classList.remove(`main-carousel-img-${i}`);
-//         }
-
+    const sliderImages = document.querySelectorAll('.slide-in');
+    console.log('sliderImages', sliderImages)
+    function checkSlide() {
+      sliderImages.forEach(sliderImage => {
+        // half way through the image
+        console.log('-----------------')
+        console.log(window.scrollY)
+        console.log(window.innerHeight)
+        console.log(sliderImage.height)
+        console.log('-----------------')
         
-//         TweenMax.to(imgDiv, 1, { x:100 ,  ease:Power2.easeIn });        
+        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+        console.log('slidein at - ', slideInAt)
+        // bottom of the image
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+        console.log("image-bottom",imageBottom)
+        const isHalfShown = slideInAt > sliderImage.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        let direction = sliderImage.dataset.direction;
+        console.log('direction ',direction);
+        if (isHalfShown && isNotScrolledPast) {
+          sliderImage.classList.add(`slide-image-${direction}`);
+        } else {
+          sliderImage.classList.remove(`slide-image-${direction}`);
+        }
+      });
+    }
 
-//         imgDiv.classList.add(`main-carousel-img-${imgCounter}`);
-//         sec = 0;
-//         imgCounter = imgCounter +1;
-//         if(imgCounter===4){
-//            imgCounter = 1;
-//         }
-//     }
-//     sec = sec +1;
-// },1000)
-
-
-function checkSlide(e){
-    console.log(e);
-}
-window.addEventListener('scroll',checkSlide);
+    window.addEventListener('scroll', debounce(checkSlide)); 

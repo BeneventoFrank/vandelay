@@ -174,6 +174,8 @@ body {
 .sectionButton {
   border: 1px solid #222222;
   background-color: #99A4AF;
+  border-radius: 3px;
+  cursor: pointer;
   color: white;
   display: flex;
   justify-content: center;
@@ -309,15 +311,10 @@ body {
 .marketing-container .arch-left-side .archText-img {
   width: 100%;
   height: auto;
-  background-image: url('../img/home/home-img-1.png');
   background-size: cover;
   background-position: center;
   height: 275px;
   margin-bottom: 47px;
-}
-.marketing-container .arch-left-side .arch-text {
-  padding-left: 15px;
-  padding-right: 15px;
 }
 .marketing-container .arch-right-side {
   width: 45%;
@@ -325,15 +322,10 @@ body {
 .marketing-container .arch-right-side .futureDesign-img {
   width: 100%;
   height: auto;
-  background-image: url('../img/home/home-img-2.png');
   background-size: cover;
   background-position: center;
   height: 275px;
   margin-top: 47px;
-}
-.marketing-container .arch-right-side .fut-text {
-  padding-left: 15px;
-  padding-right: 15px;
 }
 .marketing-header {
   height: 25px;
