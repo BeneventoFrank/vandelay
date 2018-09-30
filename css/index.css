@@ -142,7 +142,6 @@ body {
   box-sizing: border-box;
   background-color: #ffffff;
   font-family: Roboto, Arial, sans-serif;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -151,6 +150,8 @@ body {
 .inner-container {
   max-width: 1040px;
   margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .center-content {
   display: flex;
@@ -191,6 +192,9 @@ body {
 .img {
   width: 100%;
   height: auto;
+}
+.hidden {
+  display: none;
 }
 .slide-image-right {
   animation: animate-img-right 0.5s 1;
@@ -264,8 +268,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
   /* Set a specific height */
   min-height: 780px;
   /* Create the parallax scrolling effect */
@@ -282,14 +286,14 @@ body {
 .div {
   background-color: #E8E8E8;
   color: black;
-  height: 800px;
+  min-height: 800px;
 }
 .img2 {
   /* The image used */
   background-image: url('../img/arc2.jpg');
   opacity: 0.5;
   /* Set a specific height */
-  height: 650px;
+  min-height: 550px;
   /* Create the parallax scrolling effect */
   background-position: center;
   background-repeat: no-repeat;
@@ -312,7 +316,7 @@ body {
   background-image: url('../img/arc3.jpg');
   opacity: 0.5;
   /* Set a specific height */
-  height: 860px;
+  min-height: 860px;
   /* Create the parallax scrolling effect */
   background-position: center;
   background-repeat: no-repeat;
@@ -320,7 +324,7 @@ body {
 }
 .div3 {
   color: black;
-  height: 200px;
+  min-height: 200px;
 }
 .marketing-container {
   display: flex;
@@ -349,10 +353,13 @@ body {
 }
 .marketing-container .arch-right-side {
   width: 45%;
+  display: flex;
+  flex-direction: column;
 }
 @media (max-width:800px) {
   .marketing-container .arch-right-side {
     width: 100%;
+    flex-direction: column-reverse;
   }
 }
 .marketing-container .arch-right-side .futureDesign-img {
@@ -427,9 +434,22 @@ body {
   bottom: 0px;
   right: 0px;
 }
+@media (max-width:800px) {
+  .proj-container .proj-image .proj-villa-box {
+    height: 71px;
+    bottom: -55px;
+    width: 70%;
+  }
+}
 .proj-container .proj-image .proj-villa-box p {
   font-size: 2.4rem;
   letter-spacing: 8px;
+}
+@media (max-width:800px) {
+  .proj-container .proj-image .proj-villa-box p {
+    font-size: 2rem;
+    letter-spacing: 6px;
+  }
 }
 .proj-container .proj-text {
   width: 50%;
