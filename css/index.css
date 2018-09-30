@@ -309,7 +309,7 @@ body {
 @media (max-width:800px) {
   .div2 {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 0px;
   }
 }
 .img3 {
@@ -354,6 +354,19 @@ body {
   height: 275px;
   margin-bottom: 47px;
 }
+@media (max-width:800px) {
+  .marketing-container .arch-left-side .archText-img {
+    margin-bottom: 0px;
+  }
+}
+.marketing-container .arch-left-side .arch-text {
+  padding-top: 50px;
+}
+@media (max-width:800px) {
+  .marketing-container .arch-left-side .arch-text {
+    padding-top: 0px;
+  }
+}
 .marketing-container .arch-right-side {
   width: 45%;
   display: flex;
@@ -371,7 +384,20 @@ body {
   background-size: cover;
   background-position: center;
   height: 275px;
-  margin-top: 47px;
+  margin-top: 0px;
+}
+@media (max-width:800px) {
+  .marketing-container .arch-right-side .futureDesign-img {
+    margin-top: 47px;
+  }
+}
+.marketing-container .arch-right-side .fut-text {
+  padding-bottom: 50px;
+}
+@media (max-width:800px) {
+  .marketing-container .arch-right-side .fut-text {
+    padding-bottom: 0px;
+  }
 }
 .marketing-header {
   height: 25px;
