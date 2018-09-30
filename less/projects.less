@@ -9,8 +9,79 @@
     .proj-image{
         width: 100%;
         height: auto;
+
+        .proj-image-container{
+            position:relative;
+        }
+
+        .proj-blocks-box{
+            background-color: @boxColor;
+            position: absolute;
+            height:96px;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            width: 31%;
+            bottom:0px;
+            right:0px;
+        
+            p{
+                font-size: 2.4rem;
+                letter-spacing: 5px;
+        
+                @media @desktop{
+                    letter-spacing: 8px;    
+                }
+            }
+        }
+        
+        .proj-outskirts-box{
+            background-color: @boxColor;
+            position: absolute;
+            height:96px;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            width: 31%;
+            bottom:0px;
+            left:0px;
+        
+            p{
+                font-size: 2.4rem;
+                letter-spacing: 5px;
+        
+                @media @desktop{
+                    letter-spacing: 8px;    
+                }
+            }
+        }
+
+        .proj-villa-box{
+            background-color: @boxColor;
+            position: absolute;
+            height:96px;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            width: 31%;
+            bottom:0px;
+            right:0px;
+       
+            p{
+                font-size: 2.4rem;
+                letter-spacing: 5px;
+        
+                @media @desktop{
+                    letter-spacing: 8px;    
+                }
+            }
+        }
+        
+
     }
     .proj-text{
         width: 50%;
+        margin-top:30px;
+        margin-bottom:50px;
     }
 }
