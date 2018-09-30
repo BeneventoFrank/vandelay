@@ -5,6 +5,13 @@
 
       var img = document.getElementById('img1');
       img.classList.add('bgImage');
+
+      var img2 = document.getElementById('img2');
+      img2.classList.add('bgImage');
+
+      var img3 = document.getElementById('img3');
+      img3.classList.add('bgImage');
+  
       
       const sliderImages = document.querySelectorAll('.slide-in');
   
