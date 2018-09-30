@@ -16,33 +16,34 @@
     //   };
     // };
 
-    const sliderImages = document.querySelectorAll('.slide-in');
-    console.log('sliderImages', sliderImages)
-    function checkSlide() {
-      sliderImages.forEach(sliderImage => {
-        // half way through the image
-        console.log('-----------------')
-        alert(navigator.userAgent)
-        console.log(window.scrollY)
-        console.log(window.innerHeight)
-        console.log(sliderImage.height)
-        console.log('-----------------')
-        
-        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
-        console.log('slidein at - ', slideInAt)
-        // bottom of the image
-        const imageBottom = sliderImage.offsetTop + sliderImage.height;
-        console.log("image-bottom",imageBottom)
-        const isHalfShown = slideInAt > sliderImage.offsetTop;
-        const isNotScrolledPast = window.scrollY < imageBottom;
-        let direction = sliderImage.dataset.direction;
-        console.log('direction ',direction);
-        if (isHalfShown && isNotScrolledPast) {
-          sliderImage.classList.add(`slide-image-${direction}`);
-        } else {
-          sliderImage.classList.remove(`slide-image-${direction}`);
-        }
-      });
-    }
+    // const sliderImages = document.querySelectorAll('.slide-in');
 
-    window.addEventListener('scroll', checkSlide); 
+    // function checkSlide() {
+    //   sliderImages.forEach(sliderImage => {
+    //     // half way through the image
+       
+    //     const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+    //     console.log('slidein at - ', slideInAt)
+    //     // bottom of the image
+    //     const imageBottom = sliderImage.offsetTop + sliderImage.height;
+    //     console.log("image-bottom",imageBottom)
+    //     const isHalfShown = slideInAt > sliderImage.offsetTop;
+    //     const isNotScrolledPast = window.scrollY < imageBottom;
+    //     let direction = sliderImage.dataset.direction;
+    //     console.log('direction ',direction);
+    //     if (isHalfShown && isNotScrolledPast) {
+    //       sliderImage.classList.add(`slide-image-${direction}`);
+    //     } else {
+    //       sliderImage.classList.remove(`slide-image-${direction}`);
+    //     }
+    //   });
+    // }
+
+    // window.addEventListener('scroll', checkSlide); 
+
+    console.log('-----------------')
+    console.log(navigator.userAgent)
+    console.log(window.scrollY)
+    console.log(window.innerHeight)
+    console.log(sliderImage.height)
+    console.log('-----------------')    
