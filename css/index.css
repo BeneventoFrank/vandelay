@@ -352,6 +352,19 @@ body {
   width: 100%;
   background-color: #99A4AF;
 }
+.proj-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.proj-container .proj-image {
+  width: 100%;
+  height: auto;
+}
+.proj-container .proj-text {
+  width: 50%;
+}
 .footer {
   background-color: #828282;
   color: white;
